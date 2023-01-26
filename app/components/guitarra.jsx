@@ -3,8 +3,6 @@ import { Link } from "@remix-run/react";
 function Guitarra({ guitarra }) {
   const { descripcion, imagen, precio, url, nombre } = guitarra;
 
-  console.log(imagen.data.attributes.formats.medium.url);
-
   return (
     <div className="guitarra">
       <img
