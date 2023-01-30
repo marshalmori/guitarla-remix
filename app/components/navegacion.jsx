@@ -21,8 +21,8 @@ function Navegacion() {
         Tienda
       </Link>
       <Link
-        to="/blog"
-        className={location.pathname === "/blog" ? "active" : ""}
+        to="/post"
+        className={location.pathname === "/post" ? "active" : ""}
       >
         Blog
       </Link>
