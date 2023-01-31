@@ -29,10 +29,6 @@ export function links() {
     {
       rel: "preconnect",
       href: "https://fonts.googleapis.com",
-    },
-    {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com",
       crossOrigin: "true",
     },
     {
@@ -50,7 +46,21 @@ export default function App() {
   const [carrito, setCarrito] = useState([]);
 
   const agregarCarrito = (guitarra) => {
-    setCarrito([...carrito, guitarra]);
+    if (carrito.some((guitarraState) => guitarraState.id === guitarra.id)) {
+      const carritoActualizado = carrito.map((guitarraState) => {
+        if (guitarraState.id === guitarra.id) {
+          //Reescrever a quantidade
+          guitarraState.cantidad = guitarra.cantidad;
+        }
+        return guitarraState;
+      });
+
+      //Adicionar ao carrinho
+      setCarrito(carritoActualizado);
+    } else {
+      //Novo registro, adicionar ao carrinho
+      setCarrito([...carrito, guitarra]);
+    }
   };
 
   return (
