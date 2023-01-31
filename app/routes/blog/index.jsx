@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
-import ListadoPosts from "../components/listado-posts";
+import ListadoPosts from "~/components/listado-posts";
 import { getPosts } from "~/models/posts.server";
 
 export function meta() {
